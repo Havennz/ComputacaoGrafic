@@ -44,16 +44,6 @@ O projeto está organizado da seguinte forma:
 |   |   `-- medium_region_growing_tutorial.md
 |   `-- resultados_imagens/
 |
-|-- relatorios_python/
-|   |-- 01_filtros_frequencia_report.md
-|   |-- 02_segmentacao_watershed_report.md
-|   |-- 03_crescimento_regioes_report.md
-|   |-- relatorio_final_python.html   # Relatório final em HTML (intermediário)
-|   |-- relatorio_final_python.md     # Relatório final consolidado em Markdown
-|   |-- relatorio_final_python.pdf    # Relatório final consolidado em PDF
-|   |-- style.css                     # CSS para o relatório HTML/PDF
-|   `-- convert_md_to_pdf.py        # Script para converter MD para PDF via HTML
-|
 |-- obter_imagens_teste.py          # Script inicial para obter imagens (pode não ser mais necessário)
 |-- requirements.txt                # Dependências Python do projeto
 |-- todo_python.md                  # Checklist de tarefas (interno)
