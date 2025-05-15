@@ -1,51 +1,105 @@
-# Trabalho de Faculdade - Processamento de Imagens em Lua
+# Trabalho de Faculdade: Processamento de Imagens com Python
 
-Este repositório contém implementações de algoritmos de processamento de imagens em Lua, desenvolvidos como parte de uma tarefa de faculdade. O projeto aborda três tópicos principais:
+Este projeto implementa e demonstra três técnicas de processamento de imagens utilizando Python e bibliotecas populares como OpenCV, Scikit-image, NumPy e Matplotlib. Os algoritmos abordados são:
 
-1.  **Filtros de Frequência (Simulação com Filtros Espaciais)**
-2.  **Segmentação Watershed (Simulação Simplificada)**
-3.  **Crescimento de Regiões (Simulação Simplificada)**
+1.  **Filtros de Frequência**
+2.  **Segmentação Watershed**
+3.  **Crescimento de Regiões**
 
-## Tópicos Abordados
+## Estrutura do Projeto
 
-### 1. Filtros de Frequência
+O projeto está organizado da seguinte forma:
 
-Localizado na pasta `filtros_frequencia`.
-
-*   `filtros_frequencia.lua`: Contém uma simulação de filtros de frequência utilizando filtros espaciais (média para passa-baixa e Laplaciano para passa-alta) em Lua. O código inclui funções para criar e imprimir imagens (representadas como matrizes) e aplicar os filtros.
-*   `referencia_wikipedia_filtros_frequencia.md`: Material de referência sobre a teoria de filtragem no domínio da frequência.
-
-### 2. Segmentação Watershed
-
-Localizado na pasta `segmentacao_watershed`.
-
-*   `segmentacao_watershed.lua`: Apresenta uma simulação conceitual e simplificada do algoritmo Watershed. Dada a complexidade de uma implementação completa em Lua puro sem bibliotecas dedicadas, o foco é na lógica de "inundação" a partir de marcadores em uma imagem de intensidade.
-*   `referencia_geeksforgeeks_watershed.md`: Documentação teórica e um exemplo de implementação (em Python/OpenCV) do algoritmo Watershed, servindo como base conceitual.
-
-### 3. Crescimento de Regiões
-
-Localizado na pasta `crescimento_regioes`.
-
-*   `crescimento_regioes.lua`: Demonstra uma simulação do algoritmo de Crescimento de Regiões. O código parte de pontos de semente e expande as regiões com base em um critério de similaridade de intensidade.
-*   `referencia_inpe_crescimento_regioes.md`: Documentação teórica sobre o algoritmo de crescimento de regiões, extraída de material do INPE.
-*   `regiongrow.pdf`: Documento PDF original da UFSC que serve como referência aprofundada sobre o tema.
+```
+/trabalho_faculdade_python
+|-- filtros_frequencia_python/
+|   |-- __init__.py
+|   |-- filtros_frequencia.py       # Código principal do algoritmo
+|   |-- imagens_exemplo/            # Imagens de entrada para este tópico
+|   |   |-- camera_original.png
+|   |   |-- moon_original.png
+|   |   `-- text_original.png
+|   |-- referencias/                # Materiais de referência teórica
+|   |   `-- kaggle_skimage_tutorial.md
+|   `-- resultados_imagens/         # Imagens geradas pelo algoritmo
+|
+|-- segmentacao_watershed_python/
+|   |-- __init__.py
+|   |-- segmentacao_watershed.py    # Código principal do algoritmo
+|   |-- imagens_exemplo/
+|   |   |-- chelsea_original.png
+|   |   `-- coins_original.png
+|   |-- referencias/
+|   |   `-- skimage_watershed_tutorial.md
+|   `-- resultados_imagens/
+|
+|-- crescimento_regioes_python/
+|   |-- __init__.py
+|   |-- crescimento_regioes.py      # Código principal do algoritmo
+|   |-- imagens_exemplo/
+|   |   |-- astronaut_original.png
+|   |   |-- horse_original.png
+|   |   `-- text_original.png
+|   |-- referencias/
+|   |   `-- medium_region_growing_tutorial.md
+|   `-- resultados_imagens/
+|
+|-- relatorios_python/
+|   |-- 01_filtros_frequencia_report.md
+|   |-- 02_segmentacao_watershed_report.md
+|   |-- 03_crescimento_regioes_report.md
+|   |-- relatorio_final_python.html   # Relatório final em HTML (intermediário)
+|   |-- relatorio_final_python.md     # Relatório final consolidado em Markdown
+|   |-- relatorio_final_python.pdf    # Relatório final consolidado em PDF
+|   |-- style.css                     # CSS para o relatório HTML/PDF
+|   `-- convert_md_to_pdf.py        # Script para converter MD para PDF via HTML
+|
+|-- obter_imagens_teste.py          # Script inicial para obter imagens (pode não ser mais necessário)
+|-- requirements.txt                # Dependências Python do projeto
+|-- todo_python.md                  # Checklist de tarefas (interno)
+`-- README.md                       # Este arquivo
+```
 
 ## Como Executar os Códigos
 
-Para executar os arquivos `.lua`, você precisará de um interpretador Lua instalado em seu sistema.
+### Pré-requisitos
 
-Por exemplo, para executar o código de filtros de frequência:
+- Python 3.11 ou superior.
+- As bibliotecas listadas no arquivo `requirements.txt`.
+
+### Instalação das Dependências
+
+Navegue até a pasta raiz do projeto (`/trabalho_faculdade_python`) e execute o seguinte comando no terminal para instalar as dependências:
 
 ```bash
-lua filtros_frequencia/filtros_frequencia.lua
+pip install -r requirements.txt
 ```
 
-Os scripts foram desenvolvidos para serem autoexplicativos e imprimirão os resultados das simulações no console.
+### Executando os Scripts Individuais
 
-## Relatório
+Cada algoritmo possui um script Python principal que pode ser executado independentemente. Para executar um algoritmo específico, navegue até a pasta do respectivo módulo e execute o script Python. Por exemplo, para executar o algoritmo de filtros de frequência:
 
-Um relatório detalhado em formato PDF será gerado, cobrindo a teoria, a implementação, os resultados e as conclusões para cada um dos tópicos. Os rascunhos das seções do relatório serão preparados na pasta `relatorios_individuais`.
+```bash
+cd filtros_frequencia_python
+python filtros_frequencia.py
+```
 
-## Observações
+Os resultados (imagens processadas e figuras de comparação) serão salvos na subpasta `resultados_imagens/` dentro de cada módulo.
 
-As implementações em Lua são simulações didáticas e simplificadas dos algoritmos, especialmente devido à ausência de bibliotecas gráficas ou de processamento de imagem avançadas diretamente em Lua padrão para manipulação visual de imagens. O foco está em demonstrar a lógica fundamental de cada técnica usando representações matriciais de imagens.
+## Relatório Final
+
+Um relatório detalhado (`relatorio_final_python.pdf`) se encontra na pasta `relatorios_python/`. Este relatório contém:
+
+*   Explicações teóricas sobre cada um dos algoritmos.
+*   Os códigos Python implementados.
+*   Resultados visuais da aplicação dos algoritmos em imagens de exemplo.
+*   Conclusões sobre cada técnica.
+
+## Imagens de Exemplo
+
+As imagens de exemplo utilizadas para testar os algoritmos estão localizadas nas subpastas `imagens_exemplo/` de cada módulo correspondente.
+
+## Referências
+
+Os materiais de referência teórica utilizados para cada tópico estão nas subpastas `referencias/` de cada módulo.
+
