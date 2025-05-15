@@ -78,7 +78,7 @@ Os resultados (imagens processadas e figuras de comparação) serão salvos na s
 
 ## Relatório Final
 
-Um relatório detalhado (`relatorio_final_python.pdf`) se encontra na pasta `relatorios_python/`. Este relatório contém:
+O relatório final disponibilizado contém: 
 
 *   Explicações teóricas sobre cada um dos algoritmos.
 *   Os códigos Python implementados.
